@@ -21,7 +21,7 @@ class Product(models.Model):
     promotions = models.ManyToManyField(Promotion)
 
 
-class Customer(models.Modle):
+class Customer(models.Model):
     MEMBERSHIP_BRONZE = "B"
     MEMBERSHIP_SILVER = "S"
     MEMBERSHIP_GOLD = "G"
