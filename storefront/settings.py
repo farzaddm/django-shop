@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     "store",
     "tags",
     "likes",
-    "playground"
+    "playground",
+    "store_custom",
 ]
 
 MIDDLEWARE = [
