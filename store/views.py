@@ -1,20 +1,21 @@
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.filters import SearchFilter, OrderingFilter
 from .models import Product, Collection, OrderItem, Review
 from .serializers import ProductSerializer, CollectionSerializer, ReviewSerializer
+from .filters import ProductFilter
 
 
 class ProductViewSet(ModelViewSet):
+    queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    
-    def get_queryset(self):
-        queryset = Product.objects.all()
-        collection_id = self.request.query_params.get('collection_id')
-        if collection_id is not None:
-            queryset = queryset.filter(collection_id=collection_id)
-        return queryset
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_class = ProductFilter
+    search_fields = ['title', 'description']
+    ordering_fields = ['unit_price', 'last_update']
 
     # for sending the context when calling serializer
     def get_serializer_context(self):
@@ -48,11 +49,11 @@ class CollectionViewSet(ModelViewSet):
 
 class ReviewViewSet(ModelViewSet):
     serializer_class = ReviewSerializer
-    
-    # because if we define it as a property we cannot access self obj 
+
+    # because if we define it as a property we cannot access self obj
     def get_queryset(self):
-        return Review.objects.filter(product_id=self.kwargs['product_pk'])
+        return Review.objects.filter(product_id=self.kwargs["product_pk"])
 
     # to send a object to serializer class
     def get_serializer_context(self):
-        return {'product_id': self.kwargs['product_pk']}
+        return {"product_id": self.kwargs["product_pk"]}
