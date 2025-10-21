@@ -41,5 +41,12 @@ class CollectionViewSet(ModelViewSet):
 
 
 class ReviewViewSet(ModelViewSet):
-    queryset = Review.objects.all()
     serializer_class = ReviewSerializer
+    
+    # because if we define it as a property we cannot access self obj 
+    def get_queryset(self):
+        return Review.objects.filter(product_id=self.kwargs['product_pk'])
+
+    # to send a object to serializer class
+    def get_serializer_context(self):
+        return {'product_id': self.kwargs['product_pk']}
