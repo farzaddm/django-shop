@@ -3,12 +3,18 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.viewsets import ModelViewSet, GenericViewSet
-from rest_framework.mixins import CreateModelMixin, ListModelMixin
+from rest_framework.mixins import (
+    CreateModelMixin,
+    ListModelMixin,
+    DestroyModelMixin,
+    RetrieveModelMixin,
+)
 from rest_framework.filters import SearchFilter, OrderingFilter
 from .models import Product, Collection, OrderItem, Review
 from .serializers import *
 from .filters import ProductFilter
 from .pagination import DefaultPagination
+
 
 class ProductViewSet(ModelViewSet):
     queryset = Product.objects.all()
@@ -16,8 +22,8 @@ class ProductViewSet(ModelViewSet):
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_class = ProductFilter
     pagination_class = DefaultPagination
-    search_fields = ['title', 'description']
-    ordering_fields = ['unit_price', 'last_update']
+    search_fields = ["title", "description"]
+    ordering_fields = ["unit_price", "last_update"]
 
     # for sending the context when calling serializer
     def get_serializer_context(self):
@@ -58,10 +64,30 @@ class ReviewViewSet(ModelViewSet):
 
     def get_serializer_context(self):
         return {"product_id": self.kwargs["product_pk"]}
-    
 
 
 # we dont use the modelviewset because we dont need put, patch, get all end points
-class CartViewSet(CreateModelMixin, GenericViewSet, ListModelMixin):
-    queryset = Cart.objects.prefetch_related('items__product').all()
+class CartViewSet(
+    CreateModelMixin,
+    GenericViewSet,
+    ListModelMixin,
+    DestroyModelMixin,
+    RetrieveModelMixin,
+):
+    queryset = Cart.objects.prefetch_related("items__product").all()
     serializer_class = CartSerializer
+
+
+class CartItemViewSet(ModelViewSet):
+
+    def get_serializer_class(self):
+        if self.request.method == "POST":
+            return AddCartItemSerializer
+        return CartItemSerializer
+    
+    def get_serializer_context(self):
+        return {'cart_id': self.kwargs['cart_pk']}
+
+    def get_queryset(self):
+        cart_id = self.kwargs["cart_pk"]  # from the nested router
+        return CartItem.objects.filter(cart_id=cart_id).select_related("product")
