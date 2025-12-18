@@ -90,6 +90,11 @@ class Order(models.Model):
     )
     placed_at = models.DateTimeField(auto_now_add=True)
     customer = models.ForeignKey(Customer, on_delete=models.PROTECT)
+    
+    class Meta:
+      permissions = [
+        ('cancel_order', 'Can cancel order')
+      ]
 
 
 class Adderss(models.Model):

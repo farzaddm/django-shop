@@ -8,6 +8,7 @@ from rest_framework.mixins import (
     ListModelMixin,
     DestroyModelMixin,
     RetrieveModelMixin,
+    UpdateModelMixin,
 )
 from rest_framework.filters import SearchFilter, OrderingFilter
 from .models import Product, Collection, OrderItem, Review
@@ -94,3 +95,8 @@ class CartItemViewSet(ModelViewSet):
     def get_queryset(self):
         cart_id = self.kwargs["cart_pk"]  # from the nested router
         return CartItem.objects.filter(cart_id=cart_id).select_related("product")
+
+
+class CustomerViewSet(CreateModelMixin, RetrieveModelMixin, UpdateModelMixin, GenericViewSet):
+  queryset = Customer.objects.all()
+  serializer_class = CustomerSerializer
