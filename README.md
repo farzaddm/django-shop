@@ -1,113 +1,72 @@
 # Backend E-commerce Django API
 
 
-## 🚀 What I Learned & What’s Implemented in This Project
-
-This project is the result of completing **The Ultimate Django Series** by *Mosh Hamedani*.
+This project is the result of completing **[The Ultimate Django Series](https://codewithmosh.com/p/the-ultimate-django-series)** by *[Mosh Hamedani](https://codewithmosh.com/)*.  
 It demonstrates a **production-ready backend architecture** for an e-commerce system and reflects the practical skills and best practices learned throughout all three parts of the course.
 
 
-## 🧠 Key Concepts, Features & Skills Learned
-
+## 🧠 Key Concepts, Features
+TODO seprated app logic - and explain about it
 ### 🗄 Database Design & ORM
 
-* Designing relational schemas for e-commerce systems
-* Query optimization with:
-
-  * `select_related`
-  * `prefetch_related`
+* Relational database design for an e-commerce system
+* Query optimization using `select_related` and `prefetch_related`
 
 ### 📦 File & Image Handling
 
-* Uploading **product images**
-* Configuring `MEDIA_ROOT` and `MEDIA_URL`
-* Writing **custom validators** for uploaded files and images
-* Restricting file size, file type, and image dimensions
-* Handling media files safely in development and production
+* Product image uploads and media management
+* File and image validation (custome and django validation)
 
 ### 🔐 Authentication & Authorization
 
 * Django authentication system
-* Custom user model integration
-* Token-based authentication
-* Permission classes and access control
-* Protecting sensitive endpoints
-* Role-based access (admin vs regular users)
+* Custom user model
+* Token-based authentication and permissions (JWT)
 
 ### 🧩 Django Admin Customization
 
-* Customizing the **Django admin panel**
-* Adding:
-
-  * Custom list displays
-  * Search fields
-  * Filters
-  * Inline related models
+* Admin panel customization
+* Custom list views, search, filters, and inline models
 
 ### 🔔 Signals & Business Logic
 
-* Writing **custom Django signals**
-* Automatically creating related objects
+* Custom Django signals
+* Automated creation of related objects
 
-### 🌐 REST APIs with Django REST Framework
+### 🌐 REST APIs (Django REST Framework)
 
-* Building RESTful APIs using:
-
-  * Serializers
-  * ViewSets
-  * Routers
-* Nested serializers
-* Custom serializer methods
+* REST API development using DRF
 * Pagination, filtering, searching, and ordering
 
-### 🛒 E-commerce Functionality
+### 🛒 E-commerce Core Features
 
-* Product catalog
-* Shopping cart logic
-* Cart items and quantities
-* Order creation workflow
-* Order items snapshotting product data
-* Price calculations and validations
+* Product catalog and shopping cart
+* Order workflow and price validation
 
 ### 🧪 Testing & Code Quality
 
-* Writing **automated tests with pytest**
-* Testing:
+* Automated testing with pytest
+* Testing models, APIs, and permissions
 
-  * Models
-  * APIs
-  * Permissions
-* Using fixtures for clean test data
-* Ensuring predictable and stable behavior
+### ⚡ Performance & Background Tasks
 
-### ⚡ Performance & Scalability
-
-* Using **Redis** for caching
-* Avoiding N+1 query problems
-* Background processing with **Celery**
-* Asynchronous tasks for:
-
-  * Sending emails
-  * Long-running operations
+* Redis caching
+* Background processing with Celery
 
 ### 📬 Email & Background Services
 
-* Email sending using **Dockerized SMTP server**
-* Integration with **smtp4dev** for local development
-  👉 [https://github.com/rnwood/smtp4dev/blob/master/docs/Installation.md](https://github.com/rnwood/smtp4dev/blob/master/docs/Installation.md)
-* Testing email workflows without real SMTP providers
-* Running supporting services via Docker
+* Email sending with a Dockerized SMTP server (smtp4dev)
+* Local email testing without real SMTP providers
 
 ### 🐳 Docker & Development Environment
 
-* Using Docker to run auxiliary services
-* Understanding containerized development workflows
-* Isolating infrastructure from application code
+* Docker-based development setup
+* Isolated and reproducible environments
 
 
 ## 🗂 ER Model (Database Design)
-
-![ER Diagram](./docs/er-diagram.png)
+TODO update this er model
+![ER Diagram](er/django-e-commer.png)
 
 ## 🛠 Prerequisites
 
