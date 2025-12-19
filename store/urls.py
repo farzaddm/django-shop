@@ -13,6 +13,7 @@ router.register('orders', OrderViewSet, basename='orders')
 
 products_router = routers.NestedDefaultRouter(router, 'products', lookup='product')
 products_router.register('reviews', ReviewViewSet, basename='product-reviews')
+products_router.register('images', ProductImageViewSet, basename='product-images')
 
 carts_router = routers.NestedDefaultRouter(router, 'carts', lookup='cart')
 carts_router.register('items', CartItemViewSet, basename='cart-items')
