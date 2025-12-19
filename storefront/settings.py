@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "tags",
     "likes",
     "core",
+    "mailer",
 ]
 
 MIDDLEWARE = [
@@ -175,3 +176,12 @@ SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('JWT',),
     "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
 }
+
+# this is the default setting for email, so we dont need to add it
+# we have console and file options instead of smtp
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 2525
+DEFAULT_FROM_EMAIL = 'from@moshbuy.com'

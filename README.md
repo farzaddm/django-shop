@@ -7,6 +7,7 @@ It demonstrates a **production-ready backend architecture** for an e-commerce sy
 
 ## 🧠 Key Concepts, Features
 TODO seprated app logic - and explain about it
+TODO reorder this to a better format
 ### 🗄 Database Design & ORM
 
 * Relational database design for an e-commerce system
@@ -18,7 +19,7 @@ TODO seprated app logic - and explain about it
 * File and image validation (custome and django validation)
 
 ### 🔐 Authentication & Authorization
-
+TODO check the jwt line
 * Django authentication system
 * Custom user model
 * Token-based authentication and permissions (JWT)
@@ -54,6 +55,7 @@ TODO seprated app logic - and explain about it
 * Background processing with Celery
 
 ### 📬 Email & Background Services
+TODO mentioned the repo and tell the admin panel in localhost:5000
 
 * Email sending with a Dockerized SMTP server (smtp4dev)
 * Local email testing without real SMTP providers
@@ -119,7 +121,7 @@ Make sure you have the following installed:
 ## 📌 API Usage
 
 Once the server is running, visit:
-
+TODO fix this apis
 ```
 http://localhost:8000/api/
 http://localhost:8000/admin/
