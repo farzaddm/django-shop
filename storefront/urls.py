@@ -19,11 +19,22 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
 from debug_toolbar.toolbar import debug_toolbar_urls
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularSwaggerView,
+)
+
 
 admin.site.site_header = 'Storefront Admin'
 admin.site.index_title = 'Admin'
 
 urlpatterns = [
+    path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
+    path(
+        "api/schema/swagger-ui/",
+        SpectacularSwaggerView.as_view(url_name="schema"),
+        name="swagger-ui",
+    ),
     path('admin/', admin.site.urls),
     path('test/', include('playground.urls')),
     path('store/', include('store.urls')),

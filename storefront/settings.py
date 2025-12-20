@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'corsheaders',
     "rest_framework",
     'djoser',
+    "drf_spectacular",
     "debug_toolbar",
     "playground",
     "store",
@@ -158,6 +159,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     'COERCE_DECIMAL_TO_STRING': False,
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',

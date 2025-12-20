@@ -48,7 +48,8 @@ TODO check the jwt line
 
 * Automated testing with pytest
 * Testing models, APIs, and permissions
-* TODO use model_bakery
+TODO use model_bakery
+TODO use fixture 
 
 ### ⚡ Performance & Background Tasks
 TODO redis for caching and message broker
