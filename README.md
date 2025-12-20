@@ -2,7 +2,7 @@
 
 
 This project is the result of completing **[The Ultimate Django Series](https://codewithmosh.com/p/the-ultimate-django-series)** by *[Mosh Hamedani](https://codewithmosh.com/)*.  
-It demonstrates a **production-ready backend architecture** for an e-commerce system and reflects the practical skills and best practices learned throughout all three parts of the course.
+It demonstrates a **backend architecture** for an e-commerce system and reflects the practical skills and best practices learned throughout all three parts of the course.
 
 TODO explain the app structure and what each do
 ## 🧠 Key Concepts, Features
@@ -48,6 +48,7 @@ TODO check the jwt line
 
 * Automated testing with pytest
 * Testing models, APIs, and permissions
+* TODO use model_bakery
 
 ### ⚡ Performance & Background Tasks
 TODO redis for caching and message broker
