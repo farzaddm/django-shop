@@ -152,10 +152,10 @@ pytest
 ## 📄 API Documentation
 
 - OpenAPI Schema (YAML):  
-  https://github.com/farzaddm/django-ecommerce-api/blob/main/schema.yml
+  https://github.com/farzaddm/django-ecommerce-api/blob/main/docs/schema.yml
 
 - Swagger UI (interactive):  
-  https://editor.swagger.io/?url=https://raw.githubusercontent.com/farzaddm/django-ecommerce-api/main/schema.yml
+  https://editor.swagger.io/?url=https://raw.githubusercontent.com/farzaddm/django-ecommerce-api/main/docs/schema.yml
 
 
 
