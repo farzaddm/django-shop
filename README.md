@@ -76,7 +76,7 @@ TODO mentioned the repo and tell the admin panel in localhost:5000
 
 ## 🗂 ER Model (Database Design)
 TODO update this er model
-![ER Diagram](er/django-e-commer.png)
+![ER Diagram](docs/er/django-e-commer.png)
 
 ## 🛠 Prerequisites
 
@@ -151,12 +151,11 @@ pytest
 
 ## 📄 API Documentation
 
-- OpenAPI Schema (YAML):  
+- OpenAPI schema (YAML):  
   https://github.com/farzaddm/django-ecommerce-api/blob/main/docs/schema.yml
 
-- Swagger UI (interactive):  
-  https://editor.swagger.io/?url=https://raw.githubusercontent.com/farzaddm/django-ecommerce-api/main/docs/schema.yml
-
+- Swagger UI:  
+  https://farzaddm.github.io/django-ecommerce-api/
 
 
 TODO find answer to this question before ending this project
