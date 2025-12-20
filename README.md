@@ -56,6 +56,8 @@ docker run -d -p 6379:6379 redis
 * Background processing with Celery
 TODO celery commands
 celery -A storefront worker --loglevel=info
+TODO working with flower for monitoring
+celery -A storefront flower
 
 ### 📬 Email & Background Services
 TODO mentioned the repo and tell the admin panel in localhost:5000
@@ -81,6 +83,7 @@ Make sure you have the following installed:
 - pip  
 - Virtual environment tool (`venv` or `virtualenv`)  
 - MySQL (or Postgres) configured for your Django project
+- TODO docker
 
 ## 📦 Installation
 TODO commands for runing smtp service using docker
