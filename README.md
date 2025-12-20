@@ -8,6 +8,7 @@ TODO explain the app structure and what each do
 ## 🧠 Key Concepts, Features
 TODO seprated app logic - and explain about it
 TODO reorder this to a better format
+TODO the project have a happy path swagger documentation
 ### 🗄 Database Design & ORM
 
 * Relational database design for an e-commerce system
