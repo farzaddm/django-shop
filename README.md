@@ -5,8 +5,13 @@ This project is the result of completing **[The Ultimate Django Series](https://
 It demonstrates a **backend architecture** for an e-commerce system and reflects the practical skills and best practices learned throughout all three parts of the course.
 
 TODO explain the app structure and what each do
+      - core -> specipic for this project
+      - likes -> for handeling likes
+      - mailer -> for sending eamil
+      - store -> the eccommerce logic
+      - storefront -> the file containing setting
+      - tags -> for handling tags
 ## 🧠 Key Concepts, Features
-TODO seprated app logic - and explain about it
 TODO reorder this to a better format
 TODO the project have a happy path swagger documentation
 ### 🗄 Database Design & ORM
@@ -20,7 +25,7 @@ TODO the project have a happy path swagger documentation
 * File and image validation (custome and django validation)
 
 ### 🔐 Authentication & Authorization
-TODO check the jwt line
+
 * Django authentication system
 * Custom user model
 * Token-based authentication and permissions (JWT)
@@ -129,17 +134,6 @@ TODO commands for runing smtp service using docker
    ```bash
    python manage.py runserver
    ```
-
-## 📌 API Usage
-
-Once the server is running, visit:
-TODO fix this apis
-```
-http://localhost:8000/api/
-http://localhost:8000/admin/
-```
-
-Use your favorite API client (e.g., Postman, Insomnia) to test endpoints.
 
 ## 🧪 Running Tests
 
