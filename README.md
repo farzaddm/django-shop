@@ -149,6 +149,15 @@ To run the test suite:
 pytest
 ```
 
+## 📄 API Documentation
+
+- OpenAPI Schema (YAML):  
+  https://github.com/farzaddm/django-ecommerce-api/blob/main/schema.yml
+
+- Swagger UI (interactive):  
+  https://editor.swagger.io/?url=https://raw.githubusercontent.com/farzaddm/django-ecommerce-api/main/schema.yml
+
+
 
 TODO find answer to this question before ending this project
   what is diffrent between genric, apiview and viewset
