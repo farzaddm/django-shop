@@ -66,6 +66,7 @@ TODO celery commands
 celery -A storefront worker --loglevel=info
 TODO working with flower for monitoring
 celery -A storefront flower
+TODO performance test using locust
 
 ### 📬 Email & Background Services
 TODO mentioned the repo and tell the admin panel in localhost:5000

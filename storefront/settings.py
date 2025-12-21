@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'corsheaders',
     "rest_framework",
     'djoser',
+    'silk',
     "drf_spectacular",
     "debug_toolbar",
     "playground",
@@ -65,8 +66,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
 ]
+
+# if DEBUG:
+#     MIDDLEWARE += ['silk.middleware.SilkyMiddleware']
 
 # for django tolbar debugger
 INTERNAL_IPS = [
@@ -195,5 +198,17 @@ CELERY_BEAT_SCHEDULE = {
         'task': 'mailer.tasks.notify_users',
         'schedule': 5,
         'args': ['Hello World'],
+    }
+}
+
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/2",
+        'TIMEOUT': 10*60,
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
     }
 }
